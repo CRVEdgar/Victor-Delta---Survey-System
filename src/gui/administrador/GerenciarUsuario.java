@@ -137,7 +137,11 @@ public class GerenciarUsuario extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jMenu2ActionPerformed
 
     private void MenuItemAtualizarUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItemAtualizarUsuarioActionPerformed
-        // TODO add your handling code here:
+        AtualizacaoOperador tela = new AtualizacaoOperador();
+        
+        GerenciarUsuario.DesktopPaneGerenciarUsuario.add(tela);
+        
+        tela.setVisible(true);
     }//GEN-LAST:event_MenuItemAtualizarUsuarioActionPerformed
 
     private void MenuItemGerarNovaSenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItemGerarNovaSenhaActionPerformed

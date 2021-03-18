@@ -20,6 +20,7 @@ public class AlterarStatus extends javax.swing.JInternalFrame {
     public AlterarStatus() {
         initComponents();
         PainelVistoriaEncontrada.setVisible(false);
+        PainelDadosVistoriaLoc.setVisible(false);
     }
 
     /**
@@ -39,6 +40,13 @@ public class AlterarStatus extends javax.swing.JInternalFrame {
         PainelVistoriaEncontrada = new javax.swing.JPanel();
         btnVistoriaAgendada = new javax.swing.JButton();
         btnVistoriaRealizada = new javax.swing.JButton();
+        PainelDadosVistoriaLoc = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        txtTipoVistoria = new javax.swing.JTextField();
+        txtEmbarcacao = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        txtNome = new javax.swing.JTextField();
 
         setClosable(true);
         setIconifiable(true);
@@ -77,7 +85,7 @@ public class AlterarStatus extends javax.swing.JInternalFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(224, 224, 224)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 371, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(114, Short.MAX_VALUE))
+                .addContainerGap(258, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -94,6 +102,7 @@ public class AlterarStatus extends javax.swing.JInternalFrame {
 
         PainelVistoriaEncontrada.setBorder(javax.swing.BorderFactory.createTitledBorder("Alterar Status"));
 
+        btnVistoriaAgendada.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnVistoriaAgendada.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icons8-hora-extra-48.png"))); // NOI18N
         btnVistoriaAgendada.setText("Vistoria Agendada");
         btnVistoriaAgendada.addActionListener(new java.awt.event.ActionListener() {
@@ -102,6 +111,7 @@ public class AlterarStatus extends javax.swing.JInternalFrame {
             }
         });
 
+        btnVistoriaRealizada.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         btnVistoriaRealizada.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagens/icons8-ok-48.png"))); // NOI18N
         btnVistoriaRealizada.setText("Vistoria Realizada");
         btnVistoriaRealizada.addActionListener(new java.awt.event.ActionListener() {
@@ -131,24 +141,81 @@ public class AlterarStatus extends javax.swing.JInternalFrame {
                 .addContainerGap(32, Short.MAX_VALUE))
         );
 
+        PainelDadosVistoriaLoc.setBorder(javax.swing.BorderFactory.createTitledBorder("Vistoria Encontrada"));
+
+        jLabel3.setText("Embarcação");
+
+        jLabel4.setText("Vistoria");
+
+        txtTipoVistoria.setEditable(false);
+        txtTipoVistoria.setBackground(new java.awt.Color(255, 255, 204));
+
+        txtEmbarcacao.setEditable(false);
+        txtEmbarcacao.setBackground(new java.awt.Color(255, 255, 204));
+
+        jLabel5.setText("Proprietário");
+
+        txtNome.setEditable(false);
+        txtNome.setBackground(new java.awt.Color(255, 255, 204));
+
+        javax.swing.GroupLayout PainelDadosVistoriaLocLayout = new javax.swing.GroupLayout(PainelDadosVistoriaLoc);
+        PainelDadosVistoriaLoc.setLayout(PainelDadosVistoriaLocLayout);
+        PainelDadosVistoriaLocLayout.setHorizontalGroup(
+            PainelDadosVistoriaLocLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PainelDadosVistoriaLocLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(PainelDadosVistoriaLocLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(PainelDadosVistoriaLocLayout.createSequentialGroup()
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(txtEmbarcacao))
+                    .addGroup(PainelDadosVistoriaLocLayout.createSequentialGroup()
+                        .addComponent(jLabel4)
+                        .addGap(32, 32, 32)
+                        .addComponent(txtTipoVistoria, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(115, 115, 115)
+                .addComponent(jLabel5)
+                .addGap(18, 18, 18)
+                .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        PainelDadosVistoriaLocLayout.setVerticalGroup(
+            PainelDadosVistoriaLocLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PainelDadosVistoriaLocLayout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addGroup(PainelDadosVistoriaLocLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(txtEmbarcacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5)
+                    .addComponent(txtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(PainelDadosVistoriaLocLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(txtTipoVistoria, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(39, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(PainelVistoriaEncontrada, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(PainelDadosVistoriaLoc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(PainelDadosVistoriaLoc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(PainelVistoriaEncontrada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 48, Short.MAX_VALUE))
+                .addGap(18, 18, 18))
         );
 
         pack();
@@ -157,6 +224,7 @@ public class AlterarStatus extends javax.swing.JInternalFrame {
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
         if(txtCodVistoriaInformado.getText().equals("ok")){
             PainelVistoriaEncontrada.setVisible(true);
+            PainelDadosVistoriaLoc.setVisible(true);
         }else{
             JOptionPane.showMessageDialog(null, "Não há vistoria com o código informado", "Vistoria Não Encontrada", JOptionPane.ERROR_MESSAGE);
         }
@@ -182,13 +250,20 @@ public class AlterarStatus extends javax.swing.JInternalFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel PainelDadosVistoriaLoc;
     private javax.swing.JPanel PainelVistoriaEncontrada;
     private javax.swing.JButton btnBuscar;
     private javax.swing.JButton btnVistoriaAgendada;
     private javax.swing.JButton btnVistoriaRealizada;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField txtCodVistoriaInformado;
+    private javax.swing.JTextField txtEmbarcacao;
+    private javax.swing.JTextField txtNome;
+    private javax.swing.JTextField txtTipoVistoria;
     // End of variables declaration//GEN-END:variables
 }

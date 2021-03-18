@@ -81,7 +81,7 @@ public class AgendarVistoria extends javax.swing.JInternalFrame {
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel2.setText("Tipo de Vistoria");
 
-        cmbxTipoVistoria.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Arqueação", "CTS", "Vistoria Inicial", "Vistoria de Constatação", "Retirada de Exigência", "Outros" }));
+        cmbxTipoVistoria.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Arqueação", "CTS", "PMC - Pass/Carga", "Vistoria Inicial", "Vistoria de Constatação", "Retirada de Exigência", "Outros" }));
         cmbxTipoVistoria.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmbxTipoVistoriaActionPerformed(evt);
