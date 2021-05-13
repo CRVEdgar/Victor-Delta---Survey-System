@@ -1,4 +1,5 @@
 CREATE DATABASE DB_VictorDelta;
+-- DROP DATABASE DB_VictorDelta;
 
 USE DB_VictorDelta;
 
@@ -7,6 +8,7 @@ nip int,
 nome VARCHAR(60),
 perfil VARCHAR(15),
 senha varchar(50), -- senha padrao devera ser gerada no java
+status varchar(10), -- [on ou off]
 PRIMARY KEY(nip)
 );
 
@@ -24,6 +26,19 @@ idEmb int auto_increment,
 nome varchar(50),
 tipoEmb varchar(40),
 PRIMARY KEY(idEmb)
+);
+
+CREATE TABLE Tbl_SeqTipoVisto(
+id int auto_increment,
+seqArq INT,
+seqCts INT,
+seqPmc INT,
+seqVi INT,
+seqVc INT,
+seqRe INT,
+seqOut INT,
+
+PRIMARY KEY(id)
 );
 
 
@@ -45,7 +60,7 @@ idSolicitante INT,
 
 primary key(idSequencial),
 constraint fk_VistXEmb foreign key (idEmbarcacao) references Tbl_Embarcacao (idEmb),
-constraint fk_VistXProto foreign key (nipProtocolador) references Tbl_Operador (nip),
+constraint fk_VistXProto foreign key (nipProtocolador) references Tbl_Operador (nip) ON UPDATE CASCADE,
 constraint fk_VistXCli foreign key (idSolicitante) references Tbl_Cliente (id)
 );
 
