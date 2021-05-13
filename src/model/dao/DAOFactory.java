@@ -5,10 +5,15 @@
  */
 package model.dao;
 
+import db.DB;
+import model.dao.implement.VistoriaDAOJDBC;
+
 /**
  *
  * @author Edgar
  */
 public class DAOFactory {
-    
+    public static VistoriaDAO createVistoriaDAO(){
+        return new VistoriaDAOJDBC(DB.getConnection());
+    }
 }

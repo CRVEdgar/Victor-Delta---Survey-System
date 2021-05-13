@@ -5,10 +5,17 @@
  */
 package model.dao.implement;
 
+import java.sql.Connection;
+import model.dao.VistoriaDAO;
 /**
  *
  * @author Edgar
  */
-public class VistoriaDAOJDBC {
+public class VistoriaDAOJDBC implements VistoriaDAO {
+    private Connection conn;
+    public VistoriaDAOJDBC(Connection conn){
+        this.conn = conn;
+    }
+    
     
 }
