@@ -5,44 +5,38 @@
  */
 package model.dao.implement;
 
-import entidades.Vistoria;
+import entidades.Operador;
 import java.sql.Connection;
 import java.util.List;
-import model.dao.VistoriaDAO;
+import model.dao.OperadorDAO;
+
 /**
  *
  * @author Edgar
  */
-public class VistoriaDAOJDBC implements VistoriaDAO {
+public class OperadorDAOJDBC implements OperadorDAO{
     private Connection conn;
-    public VistoriaDAOJDBC(Connection conn){
+    public OperadorDAOJDBC(Connection conn){
         this.conn = conn;
     }
-
     @Override
-    public void insert(Vistoria obj) {
+    public void insert(Operador obj) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public void update(Vistoria obj) {
+    public void update(Operador obj) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public List<Vistoria> selectAll() {
+    public void deleteByNIP(int codigo) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public void deleteByCodigo(String codigo) {
+    public List<Operador> selectAll() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
-    @Override
-    public void updateStatus(String obj) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
     
 }

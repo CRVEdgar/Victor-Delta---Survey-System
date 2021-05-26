@@ -5,17 +5,17 @@
  */
 package model.dao;
 
-import entidades.Vistoria;
+import entidades.Operador;
 import java.util.List;
 
 /**
  *
  * @author Edgar
  */
-public interface VistoriaDAO {
-    void insert(Vistoria obj);
-    void update(Vistoria obj);
-    void updateStatus(String obj);
-    void deleteByCodigo(String codigo);
-    List<Vistoria> selectAll();
+public interface OperadorDAO {
+    void insert(Operador obj);
+    void update(Operador obj);
+    /*void updateSenha(Operador obj);*/
+    void deleteByNIP(int codigo);
+    List<Operador> selectAll();
 }

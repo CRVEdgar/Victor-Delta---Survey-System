@@ -5,32 +5,28 @@
  */
 package model.dao.implement;
 
-import entidades.Vistoria;
+import entidades.Embarcacao;
 import java.sql.Connection;
 import java.util.List;
-import model.dao.VistoriaDAO;
+import model.dao.EmbarcacaoDAO;
+
 /**
  *
  * @author Edgar
  */
-public class VistoriaDAOJDBC implements VistoriaDAO {
+public class EmbarcacaoDAOJDBC implements EmbarcacaoDAO{
     private Connection conn;
-    public VistoriaDAOJDBC(Connection conn){
+    public EmbarcacaoDAOJDBC(Connection conn){
         this.conn = conn;
     }
 
     @Override
-    public void insert(Vistoria obj) {
+    public void insert(Embarcacao obj) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public void update(Vistoria obj) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public List<Vistoria> selectAll() {
+    public void update(Embarcacao obj) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
@@ -40,9 +36,8 @@ public class VistoriaDAOJDBC implements VistoriaDAO {
     }
 
     @Override
-    public void updateStatus(String obj) {
+    public List<Embarcacao> selectAll() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
     
 }
