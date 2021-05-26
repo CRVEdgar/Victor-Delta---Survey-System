@@ -15,6 +15,6 @@ import java.util.List;
 public interface ClienteDAO {
     void insert(Cliente obj);
     void update(Cliente obj);
-    void deleteByCodigo(String codigo);
+    void deleteByCodigo(int codigo);
     List<Cliente> selectAll();
 }
