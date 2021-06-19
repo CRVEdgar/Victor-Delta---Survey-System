@@ -113,14 +113,15 @@ public class VistoriaDAOJDBC implements VistoriaDAO {
         PreparedStatement st = null;
                             /* ESTUDAR A POSSIBILIDADE DE COLOCAR UMA PROCEDURE PRA REALIZAR O COMMIT/ROLLBACK*/
         String comando =   "UPDATE Tbl_Vistoria"
-                         + " SET dataAgendada = ?, horaAgendada = ?, localAgendado = ?"
+                         + " SET dataAgendada = ?, horaAgendada = ?, localAgendado = ?, statusVistoria = ?"
                          + " WHERE idSequencial = ?;";
         try{
             st = conn.prepareStatement(comando);
             st.setDate(1, new java.sql.Date(obj.getDataAgendamento().getTime()));
             st.setString(2, obj.getHoraAgendada());
             st.setString(3, obj.getLocalAgendado());
-            st.setInt(4, obj.getId());
+            st.setString(4, "Agendada");
+            st.setInt(5, obj.getId());
            
             st.executeUpdate();  
         }catch(SQLException e){
@@ -132,8 +133,25 @@ public class VistoriaDAOJDBC implements VistoriaDAO {
 
     @Override
     public void alterarSatusParaVistoriaRealizada(Vistoria obj) {
-        throw new UnsupportedOperationException("Not supported yet."); 
-        //TO-DO inserir este caso de uso
+        PreparedStatement st = null;
+                            /* ESTUDAR A POSSIBILIDADE DE COLOCAR UMA PROCEDURE PRA REALIZAR O COMMIT/ROLLBACK*/
+        String comando =   "UPDATE Tbl_Vistoria"
+                         + " SET dataRealizacaoVistoria = ?, vistoriadorChef = ?, vistoriadorAux = ?, statusVistoria = ?"
+                         + " WHERE idSequencial = ?;";
+        try{
+            st = conn.prepareStatement(comando);
+            st.setDate(1, new java.sql.Date(obj.getDataAgendamento().getTime()));
+            st.setString(2, obj.getVistoriadorChef());
+            st.setString(3, obj.getVistoriadorAux());
+            st.setString(4, "realizada");
+            st.setInt(5, obj.getId());
+           
+            st.executeUpdate();  
+        }catch(SQLException e){
+            throw new DbException(e.getMessage());         
+        }finally{
+            DB.closeStatement(st);
+        }
     }
     
     

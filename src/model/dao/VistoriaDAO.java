@@ -17,7 +17,6 @@ public interface VistoriaDAO {
     void alterarVistoria(Vistoria obj);
     void alterarSatusParaVistoriaAgendada(Vistoria obj);
     void alterarSatusParaVistoriaRealizada(Vistoria obj);
-    void updateStatus(String obj);
     void deleteByCodigo(String codigo);
     List<Vistoria> selectAll();
 }
