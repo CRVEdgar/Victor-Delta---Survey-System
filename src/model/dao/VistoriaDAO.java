@@ -14,7 +14,9 @@ import java.util.List;
  */
 public interface VistoriaDAO {
     void insert(Vistoria obj);
-    void update(Vistoria obj);
+    void alterarVistoria(Vistoria obj);
+    void alterarSatusParaVistoriaAgendada(Vistoria obj);
+    void alterarSatusParaVistoriaRealizada(Vistoria obj);
     void updateStatus(String obj);
     void deleteByCodigo(String codigo);
     List<Vistoria> selectAll();

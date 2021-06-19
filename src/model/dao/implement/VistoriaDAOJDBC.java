@@ -63,8 +63,39 @@ public class VistoriaDAOJDBC implements VistoriaDAO {
     }
 
     @Override
-    public void update(Vistoria obj) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void alterarVistoria(Vistoria obj) { /*view -> AlterarVistoria*/
+        PreparedStatement st = null;
+                            /* ESTUDAR A POSSIBILIDADE DE COLOCAR UMA PROCEDURE PRA REALIZAR O COMMIT/ROLLBACK*/
+        String comando =   "UPDATE Tbl_Vistoria"
+                         + " SET tipoVistoria = ?, enderecoVistoria = ?, atracadouro = ?"
+                         + " WHERE idSequencial = ?;"
+                         + " UPDATE tbl_Cliente"
+                         + " SET nome= ?, apelido= ?, celular1= ?, celular2= ?"
+                         + " WHERE id = ?;"
+                         + " UPDATE Tbl_Embarcacao"
+                         + " SET nome= ?, tipo= ?"
+                         + " WHERE idEmb = ?;" ;
+        try{
+            st = conn.prepareStatement(comando);
+            st.setString(1, obj.getTipoVistoria());
+            st.setString(2, obj.getEnderecoVistoria());
+            st.setString(3, obj.getAtracadouto());
+            st.setInt(4, obj.getId());
+            st.setString(5, obj.getCliente().getName());
+            st.setString(6, obj.getCliente().getApelido());
+            st.setString(7, obj.getCliente().getCelular1());
+            st.setString(8, obj.getCliente().getCelular2());
+            st.setInt(9, obj.getCliente().getId());
+            st.setString(10, obj.getEmbarcacao().getNome());
+            st.setString(11, obj.getEmbarcacao().getTipoEmb());
+            st.setInt(12, obj.getEmbarcacao().getId());
+            
+            st.executeUpdate();  
+        }catch(SQLException e){
+            throw new DbException(e.getMessage());         
+        }finally{
+            DB.closeStatement(st);
+        }
     }
 
     @Override
@@ -78,8 +109,31 @@ public class VistoriaDAOJDBC implements VistoriaDAO {
     }
 
     @Override
-    public void updateStatus(String obj) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void alterarSatusParaVistoriaAgendada(Vistoria obj) {
+        PreparedStatement st = null;
+                            /* ESTUDAR A POSSIBILIDADE DE COLOCAR UMA PROCEDURE PRA REALIZAR O COMMIT/ROLLBACK*/
+        String comando =   "UPDATE Tbl_Vistoria"
+                         + " SET dataAgendada = ?, horaAgendada = ?, localAgendado = ?"
+                         + " WHERE idSequencial = ?;";
+        try{
+            st = conn.prepareStatement(comando);
+            st.setDate(1, new java.sql.Date(obj.getDataAgendamento().getTime()));
+            st.setString(2, obj.getHoraAgendada());
+            st.setString(3, obj.getLocalAgendado());
+            st.setInt(4, obj.getId());
+           
+            st.executeUpdate();  
+        }catch(SQLException e){
+            throw new DbException(e.getMessage());         
+        }finally{
+            DB.closeStatement(st);
+        }
+    }
+
+    @Override
+    public void alterarSatusParaVistoriaRealizada(Vistoria obj) {
+        throw new UnsupportedOperationException("Not supported yet."); 
+        //TO-DO inserir este caso de uso
     }
     
     

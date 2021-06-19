@@ -21,17 +21,38 @@ public class Vistoria {
     private Date dataSolicitacao;
     private Date dataVistoria;
     private String horaVistoria;
-    private String dataAgendamento;
+    private Date dataAgendamento;
+    private String localAgendado;
+    private String horaAgendada;
     private String StatusVistoria;
     
     private Embarcacao embarcacao;
     private Operador operador;
     private Cliente cliente;
 
+    public Vistoria(Integer id, String codigoVistoria, String tipoVistoria, String enderecoVistoria, String atracadouto, Date dataSolicitacao, Date dataVistoria, String horaVistoria, Date dataAgendamento,String localAgendado, String horaAgendada, String StatusVistoria, Embarcacao embarcacao, Operador operador, Cliente cliente) {
+        this.id = id;
+        this.codigoVistoria = codigoVistoria;
+        this.tipoVistoria = tipoVistoria;
+        this.enderecoVistoria = enderecoVistoria;
+        this.atracadouto = atracadouto;
+        this.dataSolicitacao = dataSolicitacao;
+        this.dataVistoria = dataVistoria;
+        this.horaVistoria = horaVistoria;
+        this.dataAgendamento = dataAgendamento;
+        this.horaAgendada = horaAgendada;
+        this.localAgendado = localAgendado;
+        this.StatusVistoria = StatusVistoria;
+        this.embarcacao = embarcacao;
+        this.operador = operador;
+        this.cliente = cliente;
+    }
+    
+
     public Vistoria() {
     }
 
-    public Vistoria(Integer id, String codigoVistoria, String tipoVistoria, String enderecoVistoria, String atracadouto, Date dataSolicitacao, Date dataVistoria, String horaVistoria, String dataAgendamento, String StatusVistoria, Embarcacao embarcacao, Operador operador, Cliente cliente) {
+    /*public Vistoria(Integer id, String codigoVistoria, String tipoVistoria, String enderecoVistoria, String atracadouto, Date dataSolicitacao, Date dataVistoria, String horaVistoria, Date dataAgendamento, String StatusVistoria, Embarcacao embarcacao, Operador operador, Cliente cliente) {
         this.id = id;
         this.codigoVistoria = codigoVistoria;
         this.tipoVistoria = tipoVistoria;
@@ -45,7 +66,7 @@ public class Vistoria {
         this.embarcacao = embarcacao;
         this.operador = operador;
         this.cliente = cliente;
-    }
+    }*/
 
     public Integer getId() {
         return id;
@@ -111,13 +132,30 @@ public class Vistoria {
         this.horaVistoria = horaVistoria;
     }
 
-    public String getDataAgendamento() {
+    public Date getDataAgendamento() {
         return dataAgendamento;
     }
 
-    public void setDataAgendamento(String dataAgendamento) {
+    public void setDataAgendamento(Date dataAgendamento) {
         this.dataAgendamento = dataAgendamento;
     }
+
+    public String getHoraAgendada() {
+        return horaAgendada;
+    }
+
+    public void setHoraAgendada(String horaAgendada) {
+        this.horaAgendada = horaAgendada;
+    }
+
+    public String getLocalAgendado() {
+        return localAgendado;
+    }
+
+    public void setLocalAgendado(String localAgendado) {
+        this.localAgendado = localAgendado;
+    }
+    
 
     public String getStatusVistoria() {
         return StatusVistoria;

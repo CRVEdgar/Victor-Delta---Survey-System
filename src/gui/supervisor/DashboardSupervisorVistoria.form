@@ -177,7 +177,8 @@
     <Container class="javax.swing.JDesktopPane" name="desktopPaneDashBoard">
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JDesktopPane(){&#xa;    public void paintComponent(Graphics gra){&#xa;        gra.drawImage(imagem, 0, 0, getWidth(), getHeight(), this);&#xa;    }&#xa;}"/>
-        <AuxValue name="JavaCodeGenerator_CreateCodePre" type="java.lang.String" value="ImageIcon icone = new ImageIcon(getClass().getResource(&quot;/imagens/dashbordVistoria.jpg&quot;));&#xa;Image imagem = icone.getImage();"/>
+        <AuxValue name="JavaCodeGenerator_CreateCodePre" type="java.lang.String" value="ImageIcon icone = new ImageIcon(getClass().getResource(&quot;/imagens/esquadra.jpg&quot;));&#xa;Image imagem = icone.getImage();"/>
+        <AuxValue name="JavaCodeGenerator_SerializeTo" type="java.lang.String" value="DashboardSupervisorVistoria_desktopPaneDashBoard"/>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="9"/>
       </AuxValues>
 

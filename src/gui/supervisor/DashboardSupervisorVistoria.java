@@ -36,7 +36,7 @@ public class DashboardSupervisorVistoria extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        ImageIcon icone = new ImageIcon(getClass().getResource("/imagens/dashbordVistoria.jpg"));
+        ImageIcon icone = new ImageIcon(getClass().getResource("/imagens/esquadra.jpg"));
         Image imagem = icone.getImage();
         desktopPaneDashBoard = new javax.swing.JDesktopPane(){
             public void paintComponent(Graphics gra){
